@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pathscope-st"
+version = "0.1.0"
+description = "Independent calibrated virtual expression scaffold"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+pathscope-st = "pathscope_st.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
