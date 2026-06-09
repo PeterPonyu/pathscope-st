@@ -1,0 +1,55 @@
+{
+  "caveats": [
+    "No claim of best point-prediction accuracy; the published STimage context reports higher PCC than this local smoke."
+  ],
+  "claim_gate_evidence": {
+    "ablation": true,
+    "baseline_comparison": true,
+    "failure_modes": true,
+    "license_review": true,
+    "public_data_smoke": true
+  },
+  "claim_scope": "Preliminary calibration-scoped evidence: local intervals cover the same held-out split near nominal while cheap same-split point baselines are lower than the local smoke.",
+  "metrics": {
+    "hard_gene_pearson_floor": 0.170086,
+    "knn_gene_pearson_mean": 0.147126,
+    "knn_spot_pearson_mean": 0.856319,
+    "local_heldout_gene_pearson_mean": 0.26945,
+    "local_heldout_spot_pearson_mean": 0.873731,
+    "nominal_interval_coverage": 0.95,
+    "observed_interval_coverage": 0.94724,
+    "reference_reported_stimage_gene_pearson_context": 0.48,
+    "ridge_gene_pearson_mean": 0.18031,
+    "ridge_spot_pearson_mean": 0.865711,
+    "uncalibrated_point_interval_coverage": 0.0
+  },
+  "missing_evidence": [
+    "same_split_published_sota_run",
+    "sota_calibrated_head_to_head"
+  ],
+  "project": "pathscope-st",
+  "provenance": [
+    {
+      "name": "local calibrated smoke",
+      "status": "RAN"
+    },
+    {
+      "name": "patch-feature Ridge/kNN",
+      "status": "RAN"
+    },
+    {
+      "name": "Path2Space/STimage context",
+      "status": "REFERENCE_REPORTED"
+    }
+  ],
+  "schema_version": 1,
+  "validation_bar": {
+    "met": false,
+    "required_for_validated": [
+      "published SOTA run on the exact same held-out split",
+      "evidence that the calibration claim remains useful against reproduced SOTA predictions",
+      "public visible summary of all same-split and reference-reported rows"
+    ]
+  },
+  "visible_claim_label": "preliminary"
+}

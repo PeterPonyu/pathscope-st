@@ -24,9 +24,11 @@ python -m pathscope_st.cli claim-status
 
 Commands emit JSON to stdout. Gate commands also write uniform contract outputs under `results/<project>/` via the vendored `results_contract.py`.
 
-## Validation marker
+## Evidence-derived status
 
-`python -m pathscope_st.cli claim-status` reads the committed package marker in `src/pathscope_st/validation.py` and prints `validated`. It does not require private governance documents to be present.
+`python -m pathscope_st.cli claim-status` reads `evidence/summary.json`, derives the public claim label from the visible evidence and stated validation bar, and currently prints `preliminary` plus the missing-evidence list. It does not rely on private governance documents or a hardcoded validation constant.
+
+The current public-safe scope is preliminary and calibration-focused: interval coverage is visible, but published SOTA methods have not been reproduced on the exact held-out split.
 
 ## Citations and references
 
